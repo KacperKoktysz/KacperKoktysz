@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+	<head>
+		<title>Moje Hobby</title>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="author" content="Kacper Koktysz">
+		<link rel="stylesheet" href="style.css">
+		<link rel="icon" href="images/logo.jpg">
+	</head>
+	<body>
+		<nav>
+			<ul id="menu">
+				<li><a href="../index.html">Strona Główna</a></li>
+				<li><a href="../mojapasja/index.html">Moja pasja</a></li>
+				<li><a class="act" href="../mojetwory/index.html">Moje twory</a></li>
+				<li><a href="../kontakt/index.html">Kontakt</a></li>
+			</ul>
+			<div class="burger">
+				<div class="line1"></div>
+				<div class="line2"></div>
+				<div class="line3"></div>
+			</div>
+		</nav>
+		<div id="mobile__menu" class="overlay">
+            <a class="close">&times;</a>
+            <div class="overlay__content">
+                <a href=".//index.html">Strona Główna</a>
+                <a href="../mojapasja/index.html">Moja pasja</a>
+				<a class="act" href="../mojetwory/index.html">Moje twory</a>
+                <a href="../kontakt/index.html">Kontakt</a>
+            </div>
+        </div>
+		<header>
+			<h1>Kacper Koktysz<br></h1>
+		</header>
+		<section>
+			<article>
+			  <p><span id="_pog">Moje twory:</span></p>
+				<div id="film">
+					<video controls>
+						<source type="video/mp4" src="images/koki_abell.mp4">
+					</video>
+					<video controls>
+						<source type="video/mp4" src="images/koki_goku.mp4">
+					</video>
+					<video controls>
+						<source type="video/mp4" src="images/koki_moon.mp4">
+					</video>
+					<video controls>
+						<source type="video/mp4" src="images/koki_saunter.mp4">
+					</video>
+				</div>
+			</article>
+		</section>
+		<footer>
+			<p>Copyright &copy; 2021 <br>
+			  Kacper Koktysz 2I | <a href="mailto:kacper.koktysz@zse.krakow.pl">kacper.koktysz@zse.krakow.pl</a></p>
+		</footer>
+		<script>
+			const doc = document;
+			const menuOpen = doc.querySelector(".burger");
+			const menuClose = doc.querySelector(".close");
+			const overlay = doc.querySelector(".overlay");
+
+			menuOpen.addEventListener("click", () => {
+			overlay.classList.add("overlay--active");
+			});
+
+			menuClose.addEventListener("click", () => {
+			overlay.classList.remove("overlay--active");
+			});
+		</script>
+	</body>
+</html>

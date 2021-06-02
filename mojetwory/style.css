@@ -1,0 +1,270 @@
+@font-face{
+  font-family: 'Roboto-Regular';
+  src: url('fonty/Roboto-Regular.ttf');
+  font-family: 'ShipporiMinchoB1-Regular';
+  src: url('fonty/ShipporiMinchoB1-Regular.ttf');
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #2b2b2b;
+  
+}
+
+::-webkit-scrollbar-thumb {
+  background: #fff;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #FF4E54;
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    font-family: 'Roboto Regular', sans-serif;
+    color: white;
+    background: #242424;
+}
+
+/*menu*/
+nav{
+    z-index: 99;
+  background: #c800ff;
+  list-style: none;
+  text-align: center;
+  position: -webkit-sticky;
+  position: sticky;
+  margin: 0;
+  padding: 0;
+  top: 0;
+  box-shadow: 0px 5px 20px black;
+}
+
+nav li{
+display: inline-block;
+}
+
+nav a{
+  padding: 15px;
+  display: inline-block;
+}
+
+li a {
+  position: relative;
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  display: block;
+  padding: 18px;
+  z-index: 1;
+}
+
+li a::after{
+position: absolute;
+bottom: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: #e791ff;
+content: "";
+transform: scaleX(0);
+transform-origin: center;
+transition: transform 0.3s;
+z-index: -1;
+}
+
+li a:hover::after {
+  transform: scaleX(1);
+}
+
+.act{
+background:#e791ff;
+}
+/*header*/
+header{
+  color: #e791ff;
+  width: 100%;
+  height: 60vh;
+  background: url(images/bg.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  font-size: 50px;
+  text-align: center;
+}
+header span{
+color: #c800ff;
+}
+h1{
+  padding-top: 60px;
+  font-family: 'ShipporiMinchoB1 Regular', sans-serif;
+  text-shadow: 3px 5px 7px black;
+}
+/*content*/
+#_pog{
+  font-weight: 900;
+  color: #c800ff;
+}
+#film{
+  padding-top: 30px;
+  text-align: center;
+}
+#film video{
+  width: 50%;
+    z-index: -1;
+}
+section
+{
+  width: 100%;
+  padding-bottom: 10px;
+}
+article{
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding-right: 70px;
+  text-align: justify;
+  padding-left: 70px;
+}
+/*menu responsywnosc*/
+.burger{
+  display: none;
+}
+.burger div{
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 5px;
+}
+
+.overlay {
+  background: black;
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  right: 0;
+  top: 0;
+  overflow-x: hidden;
+  transition: all 0.5s ease 0s;
+}
+
+.overlay--active {
+  width: 100%;
+}
+
+.overlay__content {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay a {
+  padding: 15px;
+  font-size: 36px;
+  display: block;
+  transition: all 0.3s ease 0s;
+}
+
+.overlay a:hover,
+.overlay a:focus {
+  color: white;
+}
+.overlay .close {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+  color: #edf0f1;
+  cursor: pointer;
+}
+@media screen and (max-width:600px){
+  #menu{
+      display: none !important;
+  }
+  .burger{
+      display: block !important;
+      padding-top: 10px;
+      padding-bottom: 10px;
+  }
+  .overlay a {
+    font-size: 20px ;
+  }
+  .overlay .close {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+  }
+  .overlay__content a{
+    text-decoration: none;
+    color: white;
+    font-family: 'Open Sans';
+  }
+}
+/*stopka*/
+footer{
+  color: white;
+  text-align: center;
+  vertical-align: middle;
+  background-color: #c800ff;
+  width: 100%;
+  height: 50px;
+  position: relative;
+  left: 0;
+  bottom: 0;
+  padding-top: 40px;
+  padding-bottom: 25px;
+}
+footer a{
+	color:white;
+}
+@media screen and (max-width:500px){
+  header{
+    font-size: 30px;
+    background-position: right;
+  }
+  article{
+    padding-right: 30px;
+    padding-left: 30px;
+  }
+  #film video{
+    width: 100%;
+  }
+}
+/*media print */
+@media print {
+  body{ 
+    padding-bottom: 5px !important;
+    padding-top: 5px !important;
+  }
+  img{ 
+    display: none !important; 
+  }
+  a{ 
+    text-decoration: underline !important; 
+    color: black !important;
+    border: none !important;
+    font-family:"Times New" !important;
+  }
+  h2, h1, ._pog{
+    color: black !important;
+  }
+  p{
+    font-family:"Times New" !important;
+    font-size: 13px !important;
+    color: black !important;
+    padding-bottom: 0px !important;
+  }
+  header, video, nav, span{
+    display: none !important;
+  }
+}
